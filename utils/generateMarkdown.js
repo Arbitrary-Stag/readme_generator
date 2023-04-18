@@ -1,5 +1,5 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// This function uses a switch case statement to return the correct license badge 
+// based on the selection made by the user. If N/A was chosen an empty string is returned.
 function renderLicenseBadge(license) {
   switch (license) {
     case "MIT License": return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'; break;
@@ -14,11 +14,10 @@ function renderLicenseBadge(license) {
     case "N/A": return ''; break;
     default: '';
   }
-
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// This function also uses a switch case statement as above, to return the correct "learn more" link
+// about the license the user selected for their project. 
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT License": return 'https://opensource.org/licenses/MIT'; break;
@@ -34,22 +33,46 @@ function renderLicenseLink(license) {
     default: '';
 }
 }
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// This function generates the string the that will fill the License section of the README file
+// if the user selected a license to apply, otherwise it will return an empty string. 
 function renderLicenseSection(license) {
   if (license ==="N/A") {
     return "";
   }
 return `This application is covered under the [${license}](${renderLicenseLink(license)}). 
-Please click the link for more information.
+If you would like to learn more about this license, please click the link above.
 `
 }
 
-// TODO: Create a function to generate markdown for README
+// This function generates the content of the README file and is then exported to the index.js.
+// It is essentially a string, that is utilizing markdown formatting and javascript to fill in 
+// the sections with data collected from Inquirer. 
 function generateMarkdown(data) {
-  return `# ${data.title}
-
+  return `# ${data.title}\n
+  ${renderLicenseBadge(data.license)}
+## Description
+${data.description}
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## License
+${renderLicenseSection(data.license)}
+## Contributing
+${data.contributing}
+## Tests
+${data.tests}
+## Questions
+GitHub: [${data.username}](https://github.com/${data.username})\n
+Email: [${data.email}](mailto:${data.email})
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = {generateMarkdown};
