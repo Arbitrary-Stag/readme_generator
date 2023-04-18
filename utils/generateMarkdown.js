@@ -40,7 +40,7 @@ function renderLicenseSection(license) {
     return "";
   }
 return `This application is covered under the [${license}](${renderLicenseLink(license)}). 
-If you would like to learn more about this license, please click the link above.
+If you would like to learn more about this license, please click the link.
 `
 }
 
