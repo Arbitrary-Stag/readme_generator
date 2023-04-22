@@ -24,6 +24,10 @@ If you would like to learn more about this license, please click the link.
 ## Credits
 This code was written by William Weaver, using the assistance of class materials, google search engine, and various youtube tutorials.
 
+## Video Tutorial
+Click the link below to view a soundless tutorial demonstrating the apps functionality. 
+https://drive.google.com/file/d/1ifNnjAhmxf9XZweRZ1CyMjFIQ2QiVOdB/view
+
 ## Link
 https://github.com/Arbitrary-Stag/readme_generator
 
